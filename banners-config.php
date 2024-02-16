@@ -21,7 +21,7 @@ or unsafe
 
 */
 
-if (!defined('ABSPATH')) {
+if ( !defined('ABSPATH') ) {
     exit; 
 }
 
@@ -79,11 +79,11 @@ function banners_conf_display( $banner_name, $display = true ){
 
     }
 
-    if (isset($banners[$banner_name]['url']) && trim($banners[$banner_name]['url']) !== ''){
+    if (isset( $banners[$banner_name]['url'] ) && trim( $banners[$banner_name]['url'] ) !== ''){
 
         $url = $banners[$banner_name]['url'];
 
-        if (isset( $banners[$banner_name]['erid']) AND $banners[$banner_name]['erid'] !== ''){
+        if (isset( $banners[$banner_name]['erid']) AND $banners[$banner_name]['erid'] !== '' ){
             $url .= '?erid='.$banners[$banner_name]['erid'];
         }
     
@@ -91,18 +91,18 @@ function banners_conf_display( $banner_name, $display = true ){
     }
 
     
-    if (isset( $banners[$banner_name]['version'])){
+    if (isset( $banners[$banner_name]['version']) ){
         $imgurl .= '?ver='.$banners[$banner_name]['version'];
     }
 
 
     $result .= '<img src="'.$imgurl.'"';
 
-    if (isset($banners[$banner_name]['width'])){
+    if (isset( $banners[$banner_name]['width']) ){
         $result .= ' width="'.$banners[$banner_name]['width'].'"';
     }
 
-    if (isset($banners[$banner_name]['height'])){
+    if (isset( $banners[$banner_name]['height']) ){
         $result .= ' height="'.$banners[$banner_name]['height'].'"';
     }   
     
@@ -117,7 +117,7 @@ function banners_conf_display( $banner_name, $display = true ){
     }
     
 
-    if ($display) { // делать echo 
+    if ( $display ) { // делать echo 
         echo $result;
         return;
     } else { // вернуть HTML
